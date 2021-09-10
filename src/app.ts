@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import routes from './routes'
 import dbInt from './Entities/migration'
+import morgan from 'morgan'
 
 class App {
   public instance: express.Application
@@ -17,6 +18,7 @@ class App {
   private middlewares (): void {
     this.instance.use(express.json())
     this.instance.use(cors())
+    this.instance.use(morgan('dev'))
   }
 
   private database (): void {

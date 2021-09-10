@@ -6,10 +6,10 @@ class User extends Model<UserAttributes, UserInput> implements UserAttributes {
   public id!: number
   public name!: string
   public email!: string
-  public password!: string;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
-  public readonly deletedAt!: Date;
+  public password!: string
+  public readonly createdAt!: Date
+  public readonly updatedAt!: Date
+  public readonly deletedAt!: Date
 }
 
 User.init({
@@ -24,7 +24,8 @@ User.init({
   },
   email: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   password: {
     type: DataTypes.STRING,

@@ -1,4 +1,8 @@
 {
-  "NotFoundEntity": "{entidade} to be updated not found",
+  "NotCreated": "{entidade} not created - Name: {name} - Exception message: {message}",
+  "NotFoundEntityDelete": "{entidade} to be deleted was not found or could not be deleted",
+  "NotFoundEntitySearch": "{entidade} to be searched not found",
+  "NotFoundEntityUpdate": "{entidade} to be updated not found",
+  "NotUpdated": "{entidade} not updated - Name: {name} - Exception message: {message}",
   "ResponseOk": "Request successfully completed"
 }

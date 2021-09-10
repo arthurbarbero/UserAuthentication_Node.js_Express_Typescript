@@ -1,4 +1,8 @@
 {
-  "NotFoundEntity": "{entidade} a ser atualizada não foi encontrada",
+  "NotCreated": "{entidade} não foi criada - Nome: {name} - Mensagem da excessão: {message}",
+  "NotFoundEntityDelete": "{entidade} a ser deletada não foi encontrada ou não pôde ser deletada",
+  "NotFoundEntitySearch": "{entidade} a ser pesquisado não foi encontrada",
+  "NotFoundEntityUpdate": "{entidade} a ser atualizado não foi encontrada",
+  "NotUpdated": "{entidade} não foi atualizada - Nome: {name} - Mensagem da excessão: {message}",
   "ResponseOk": "Requisição realizada com sucesso"
 }

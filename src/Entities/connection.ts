@@ -5,11 +5,11 @@ dotenv.config()
 class Connection {
   public sequelize: Sequelize
 
-  public constructor () {
-    this.database()
+  constructor () {
+    this.initConnection()
   }
 
-  private database (): void {
+  public initConnection (): void {
     this.sequelize = new Sequelize(
       `${process.env.SEQUELIZE_DB_DIALECT}://${process.env.SEQUELIZE_DB_USER}:${process.env.SEQUELIZE_DB_PASS}@${process.env.SEQUELIZE_DB_HOST}:${process.env.SEQUELIZE_DB_PORT}/${process.env.SEQUELIZE_DB_DATABASE}`
     )
