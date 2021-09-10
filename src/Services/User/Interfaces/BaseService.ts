@@ -1,4 +1,4 @@
-import ResponseService from '../Base/ResponseService'
+import ResponseService from '../../Base/ResponseService'
 
 interface BaseService<Input, Output>{
   ResponseService: ResponseService

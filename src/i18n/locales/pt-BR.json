@@ -1,8 +1,12 @@
 {
+  "InvalidToken": "Token inválido",
   "NotCreated": "{entidade} não foi criada - Nome: {name} - Mensagem da excessão: {message}",
   "NotFoundEntityDelete": "{entidade} a ser deletada não foi encontrada ou não pôde ser deletada",
   "NotFoundEntitySearch": "{entidade} a ser pesquisado não foi encontrada",
   "NotFoundEntityUpdate": "{entidade} a ser atualizado não foi encontrada",
+  "NotFoundEntityEmail": "{email} não foi encontrado em nossa base de dados - mensagem de excessão: {message}",
   "NotUpdated": "{entidade} não foi atualizada - Nome: {name} - Mensagem da excessão: {message}",
-  "ResponseOk": "Requisição realizada com sucesso"
+  "ResponseOk": "Requisição realizada com sucesso",
+  "Unauthorized": "Não foi passado um token ou o token não está válido",
+  "WrongPassword": "Senha incorreta para o email {email} informado"
 }

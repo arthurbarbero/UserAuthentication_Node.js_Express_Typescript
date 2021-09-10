@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import UserService from '../Services/UserService'
+import UserService from '../Services/User/UserService'
 import BaseResponse from './BaseResponse'
 
 class UserController {

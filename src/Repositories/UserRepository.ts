@@ -51,6 +51,18 @@ class UserRepository implements BaseRepository<UserInput, UserOutput> {
       paranoid: includeDeleted
     })
   }
+
+  public getByEmail (email: string): Promise<UserOutput> {
+    return User.findOne({
+      where: {
+        email
+      }
+    }).catch(error => {
+      throw new EntityNotFound(
+        LocaleService.translateReplace('NotFoundEntityEmail', { email: email, message: error.message })
+      )
+    })
+  }
 }
 
 export default UserRepository

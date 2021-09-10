@@ -1,8 +1,13 @@
 {
+  "InvalidToken": "Invalid Token",
   "NotCreated": "{entidade} not created - Name: {name} - Exception message: {message}",
   "NotFoundEntityDelete": "{entidade} to be deleted was not found or could not be deleted",
   "NotFoundEntitySearch": "{entidade} to be searched not found",
   "NotFoundEntityUpdate": "{entidade} to be updated not found",
+  "NotFoundEntityEmail": "{email} was not found in our database - Exception message: {message}",
   "NotUpdated": "{entidade} not updated - Name: {name} - Exception message: {message}",
-  "ResponseOk": "Request successfully completed"
+  "ResponseOk": "Request successfully completed",
+  "Unauthorized": "A token was not passed or the token is not valid",
+  "WrongPassword": "Incorrect password for the email {email}"
+
 }
