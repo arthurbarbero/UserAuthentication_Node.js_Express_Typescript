@@ -1,0 +1,40 @@
+version: '3.4'
+
+services:
+  nodejsboilerplate:
+    image: nodejsboilerplate
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      SEQUELIZE_DB_HOST: mysql_db
+      SEQUELIZE_DB_PORT: 3306
+      SEQUELIZE_DB_USER: node
+      SEQUELIZE_DB_PASS: node
+      SEQUELIZE_DB_DIALECT: mysql
+      SEQUELIZE_DB_DATABASE: node_db
+      JWT_PASS: 'senhasegura'
+    ports:
+      - 3000:3333
+    volumes:
+      - .:/usr/src/app
+    links: 
+      - mysql_db
+  mysql_db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'node_db'
+      MYSQL_USER: 'node'
+      MYSQL_PASSWORD: 'node'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - 3306:3306
+    expose: 
+      - 3306
+    volumes: 
+      - data:/data/db
+
+volumes:
+  data:
+
