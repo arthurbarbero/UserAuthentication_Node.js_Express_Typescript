@@ -11,10 +11,14 @@ class UserService implements BaseService<UserInput, UserOutput> {
 
   constructor () {
     this.userRepository = new UserRepository()
+    this.ResponseService = new ResponseService(
+      200,
+      false,
+      LocaleService.translate('ResponseOk')
+    )
   }
 
   public async create (payload: UserInput): Promise<UserOutput> {
-    this.setResponseService()
     payload.password = await encrypt(payload.password)
     return this.userRepository.create(payload)
       .catch(error => {
@@ -28,7 +32,6 @@ class UserService implements BaseService<UserInput, UserOutput> {
   }
 
   public update (id: number, payload: UserInput): Promise<UserOutput> {
-    this.setResponseService()
     return this.userRepository.update(id, payload).catch(error => {
       this.ResponseService = new ResponseService(
         error.status,
@@ -40,7 +43,6 @@ class UserService implements BaseService<UserInput, UserOutput> {
   }
 
   public getById (id: number): Promise<UserOutput> {
-    this.setResponseService()
     return this.userRepository.getById(id).catch(error => {
       this.ResponseService = new ResponseService(
         error.status,
@@ -52,7 +54,6 @@ class UserService implements BaseService<UserInput, UserOutput> {
   }
 
   public deleteById (id: number): Promise<boolean> {
-    this.setResponseService()
     return this.userRepository.deleteById(id).catch(error => {
       this.ResponseService = new ResponseService(
         error.status,
@@ -64,7 +65,6 @@ class UserService implements BaseService<UserInput, UserOutput> {
   }
 
   public getAll (includeDeleted: boolean): Promise<UserOutput[]> {
-    this.setResponseService()
     return this.userRepository.getAll(includeDeleted).catch(error => {
       this.ResponseService = new ResponseService(
         error.status,
@@ -76,7 +76,6 @@ class UserService implements BaseService<UserInput, UserOutput> {
   }
 
   public async login (email:string, password:string): Promise<UserOutput> {
-    this.setResponseService()
     const userLogged = await this.userRepository.getByEmail(email).catch(error => {
       this.ResponseService = new ResponseService(
         error.status,
@@ -97,14 +96,6 @@ class UserService implements BaseService<UserInput, UserOutput> {
 
     return userLogged
   }
-
-  private setResponseService (): void {
-    this.ResponseService = new ResponseService(
-      200,
-      false,
-      LocaleService.translate('ResponseOk')
-    )
-  }
 }
 
-export default new UserService()
+export default UserService

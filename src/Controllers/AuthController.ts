@@ -4,17 +4,25 @@ import UserService from '../Services/User/UserService'
 import BaseResponse from './BaseResponse'
 
 class AuthController {
+  private userService: UserService
+  private authService: AuthService
+
+  constructor () {
+    this.userService = new UserService()
+    this.authService = new AuthService()
+  }
+
   public async auth (req: Request, res: Response): Promise<Response> {
     const { email, password } = req.body
-    const userLogged = await UserService.login(email, password)
+    const userLogged = await this.userService.login(email, password)
 
     let token = ''
-    if (userLogged) { token = await AuthService.createAuth(userLogged?.id) }
+    if (userLogged) { token = this.authService.createAuth(userLogged?.id) }
 
-    return res.status(UserService.ResponseService.status).json(
+    return res.status(this.userService.ResponseService.status).json(
       new BaseResponse(
-        UserService.ResponseService.error,
-        UserService.ResponseService.message,
+        this.userService.ResponseService.error,
+        this.userService.ResponseService.message,
         {
           userLogged,
           token
@@ -24,4 +32,4 @@ class AuthController {
   }
 }
 
-export default new AuthController()
+export default AuthController
