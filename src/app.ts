@@ -3,6 +3,8 @@ import cors from 'cors'
 import routes from './routes'
 import dbInt from './Entities/migration'
 import morgan from 'morgan'
+import swaggerUi from 'swagger-ui-express'
+import { swaggerDocument } from './swagger'
 
 class App {
   public instance: Application
@@ -22,6 +24,7 @@ class App {
     this.instance.use(express.json())
     this.instance.use(cors())
     this.instance.use(morgan('dev'))
+    this.instance.use('/api-doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   }
 
   // Middleware for initiating database on sequelize
