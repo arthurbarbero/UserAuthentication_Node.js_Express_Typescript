@@ -85,7 +85,18 @@ class UserService implements BaseService<UserInput, UserOutput> {
       return null
     })
 
-    if (await validate(await encrypt(password), userLogged.password)) {
+    if (!userLogged) {
+      this.ResponseService = new ResponseService(
+        400,
+        true,
+        LocaleService.translateReplace('EmailNotFound', { email })
+      )
+      return null
+    }
+
+    const validated = await validate(password, userLogged.password)
+    console.log(validated)
+    if (!validated) {
       this.ResponseService = new ResponseService(
         400,
         true,

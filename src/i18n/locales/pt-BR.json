@@ -1,4 +1,5 @@
 {
+  "EmailNotFound": "O email {email} não foi encontrado em nossa base de dados",
   "InvalidToken": "Token inválido",
   "NotCreated": "{entidade} não foi criada - Nome: {name} - Mensagem da excessão: {message}",
   "NotFoundEntityDelete": "{entidade} a ser deletada não foi encontrada ou não pôde ser deletada",

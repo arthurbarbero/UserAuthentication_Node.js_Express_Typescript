@@ -1,4 +1,5 @@
 {
+  "EmailNotFound": "The email {email} was not found in our database",
   "InvalidToken": "Invalid Token",
   "NotCreated": "{entidade} not created - Name: {name} - Exception message: {message}",
   "NotFoundEntityDelete": "{entidade} to be deleted was not found or could not be deleted",
