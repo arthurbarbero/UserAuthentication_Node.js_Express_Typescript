@@ -3,7 +3,7 @@
 
 ### :dart: Objetivo:
 
-O intuito deste repositório é demonstrar os conhecimentos adquiridos de forma auto-didática na confecção de uma aplicação simples.
+O intuito deste repositório é demonstrar os conhecimentos adquiridos de forma autodidática na confecção de uma aplicação simples.
 
 A tecnologia utilizada aqui foi escolhida para exemplificar o conhecimento adquirido e deixar registros dos esforços gerados na aprendizagem dos seguintes temas:
 
@@ -11,7 +11,7 @@ A tecnologia utilizada aqui foi escolhida para exemplificar o conhecimento adqui
 - Typescript;
 - Sequelize + MySQL;
 - Swagger;
-- Containerização com Docker-Compose;
+- Conteinerização com Docker-Compose;
 - i18n;
 - Middlewares e Autenticação JWT.
 
@@ -92,7 +92,8 @@ Se pretende não utilizar Docker, sigo os passos:
 
 1 - Crie o arquivo `.env` na raiz da pasta, siga o exemplo do arquivo `.env-example` e preencha as informações com seu banco de dados.
 
-2 - Instale as dependencias com `npm install`
+2 - Instale as dependências com `npm install`
 
 3 - Utilize `npm run dev` para iniciar o ambiente de Desenvolvimento com 'hot-reload' provido pelo Nodemon ou utilize `npm run build` que irá compilar os arquivos em JavaScript.
+
 
