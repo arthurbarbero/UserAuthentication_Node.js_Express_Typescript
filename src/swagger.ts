@@ -1,4 +1,4 @@
-import { CreateUser, GetAllUsers, GetUserById, DeleteById, UpdateById } from './Services/User/userService.swagger'
+import { CreateUser, GetAllUsers, GetUserById, DeleteById, UpdateById } from './Services/User/UserService.swagger'
 
 export const swaggerDocument = {
   openapi: '3.0.1',
